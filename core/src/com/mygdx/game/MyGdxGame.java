@@ -7,25 +7,29 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
+	Background bg;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		bg = new Background();
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
+		update();
+		ScreenUtils.clear(1, 1, 1, 1);
 		batch.begin();
-		batch.draw(img, 0, 0);
+		bg.render(batch);
 		batch.end();
 	}
-	
+
+	public void update(){
+		bg.update();
+	}
+
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
