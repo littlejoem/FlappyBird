@@ -12,7 +12,7 @@ public class Bird {
     float vy;
     float gravity;
 
-    public Bird(){
+    public Bird() {
         img = new Texture("bird1.png");
         position = new Vector2(100, 380);
         vy = 0;
@@ -24,11 +24,22 @@ public class Bird {
 
     }
 
-    public void update(){
+    public void update() {
+        vy = 0;
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            vy = 10;
+            vy = 10; //10
         }
-        vy += gravity;
+        //create for test
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+            vy = -10;
+        }
+//        vy += gravity;
         position.y += vy;
+    }
+
+    public void recreate() {
+        img = new Texture("bird1.png");
+        position = new Vector2(100, 380);
+        vy = 0;
     }
 }
