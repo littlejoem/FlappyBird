@@ -28,7 +28,7 @@ public class Obstacles {
                 offset = new Random().nextInt(250);
             }
             emptySpace.y = position.y - offset + tx.getHeight();
-            emptySpace.x = position.x - ;
+            emptySpace.x = position.x;
         }
     }
 
